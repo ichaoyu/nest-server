@@ -9,3 +9,4 @@ export * from './sys-post.entity';
 export * from './sys-role.entity';
 export * from './sys-user.entity';
 export * from './web-siteinfo.entity';
+export * from './web-friendlink.entity';
