@@ -1,11 +1,9 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { EXCEL_SERVICE, ExcelService } from '@/shared/excel';
-import { Between, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 
 import { MESSAGES } from '@/constants';
 import { WebSiteInfoEntity } from '@/database';
-import { DelDTO } from '@/models';
 import { ContextService } from '@/shared';
 import { UpdateConfigDTO } from './site.dto';
 
@@ -30,6 +28,13 @@ export class SiteService {
     if (!existConfig) {
       throw new BadRequestException(MESSAGES.CONFIG_NOT_EXIST);
     }
-    await this.siteModel.update(id, { ...dto, updateBy: userName });
+    // save方法会自动更新updateTime
+    await this.siteModel.save({ ...dto, updateBy: userName });
+    // update方法更新数据 需要手动更新updateTime
+    // await this.siteModel.update(id, {
+    //   ...dto,
+    //   updateBy: userName,
+    //   updateTime: new Date(),
+    // });
   }
 }

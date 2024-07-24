@@ -45,10 +45,17 @@ let SiteService = class SiteService {
         if (!existConfig) {
             throw new _common.BadRequestException(_constants.MESSAGES.CONFIG_NOT_EXIST);
         }
-        await this.siteModel.update(id, {
+        // save方法会自动更新updateTime
+        await this.siteModel.save({
             ...dto,
             updateBy: userName
         });
+    // update方法更新数据 需要手动更新updateTime
+    // await this.siteModel.update(id, {
+    //   ...dto,
+    //   updateBy: userName,
+    //   updateTime: new Date(),
+    // });
     }
     constructor(siteModel, contextService){
         this.siteModel = siteModel;
