@@ -1,0 +1,35 @@
+.DS_Store
+node_modules
+**/*/node_modules/
+_build
+**/*/dist
+logs
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Cache files
+.eslintcache
+.stylelintcache
+
+# Keep files
+!.swcrc

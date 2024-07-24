@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/options/excel/excel-options.ts"],"sourcesContent":["import { ExcelModuleOptions } from '@/shared/excel';\n\nexport const EXCEL_OPTIONS: ExcelModuleOptions = {\n  global: true,\n};\n"],"names":["EXCEL_OPTIONS","global"],"rangeMappings":";;;;;;;;;;;;","mappings":";;;;+BAEaA;;;eAAAA;;;AAAN,MAAMA,gBAAoC;IAC/CC,QAAQ;AACV"}

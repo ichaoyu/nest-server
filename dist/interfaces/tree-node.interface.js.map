@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/interfaces/tree-node.interface.ts"],"sourcesContent":["/**\n * 树形节点\n */\nexport interface ITreeNode {\n  /**\n   * 标题\n   */\n  title: string;\n  /**\n   * 标识\n   */\n  key: string;\n  /**\n   * 父标识\n   */\n  parentKey?: string;\n  /**\n   * 子级\n   */\n  children?: ITreeNode[];\n}\n"],"names":[],"rangeMappings":";;","mappings":"AAAA;;CAEC"}

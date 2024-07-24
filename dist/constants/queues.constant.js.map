@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/constants/queues.constant.ts"],"sourcesContent":["/**\n * 队列\n */\nexport enum QUEUES {\n  /**\n   * 操作日志\n   */\n  OPER_LOG = 'operLog',\n  /**\n   * 登录日志\n   */\n  LOGIN_LOG = 'loginLog',\n}\n"],"names":["QUEUES"],"rangeMappings":";;;;;;;;;;;;;;;;;;;;","mappings":"AAAA;;CAEC;;;;;;;;;;;UACWA;IACV;;GAEC;IAED;;GAEC;GAPSA,WAAAA"}
