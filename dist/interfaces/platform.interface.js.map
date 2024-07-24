@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/interfaces/platform.interface.ts"],"sourcesContent":["/**\n * 平台\n */\nexport type IPlatform = 'http' | 'ws';\n"],"names":[],"rangeMappings":";;","mappings":"AAAA;;CAEC"}

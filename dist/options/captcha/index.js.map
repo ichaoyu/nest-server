@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/options/captcha/index.ts"],"sourcesContent":["export * from './captcha-options';\n"],"names":[],"rangeMappings":";;;;","mappings":";;;;qBAAc"}

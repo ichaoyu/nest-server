@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../src/modules/system/menu/index.ts"],"sourcesContent":["export * from './menu.module';\n"],"names":[],"rangeMappings":";;;;","mappings":";;;;qBAAc"}

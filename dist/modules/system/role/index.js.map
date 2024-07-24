@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../src/modules/system/role/index.ts"],"sourcesContent":["export * from './role.module';\n"],"names":[],"rangeMappings":";;;;","mappings":";;;;qBAAc"}

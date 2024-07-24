@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/interfaces/cache-model.interface.ts"],"sourcesContent":["/**\n * 缓存模型接口\n */\nexport interface ICacheModel {\n  /**\n   * 缓存名称\n   */\n  cacheName: string;\n  /**\n   * 备注\n   */\n  remark: string;\n}\n"],"names":[],"rangeMappings":";;","mappings":"AAAA;;CAEC"}

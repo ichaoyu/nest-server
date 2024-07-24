@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/constants/events.constant.ts"],"sourcesContent":["/**\n * 事件\n */\nexport enum EVENTS {\n  /**\n   * 服务器信息\n   */\n  SERVER_INFO = 'serverInfo',\n}\n"],"names":["EVENTS"],"rangeMappings":";;;;;;;;;;;;;;;;;","mappings":"AAAA;;CAEC;;;;;;;;;;;UACWA;IACV;;GAEC;GAHSA,WAAAA"}
