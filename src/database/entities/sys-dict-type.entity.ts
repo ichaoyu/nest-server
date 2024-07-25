@@ -64,6 +64,6 @@ export class SysDictTypeEntity {
   /**
    * 更新时间
    */
-  @UpdateDateColumn({ name: 'update_time' })
+  @UpdateDateColumn({ name: 'update_time', default: () => 'CURRENT_TIMESTAMP' })
   updateTime: Date;
 }

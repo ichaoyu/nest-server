@@ -46,7 +46,7 @@ export class FlinkService {
     if (existConfig) {
       throw new BadRequestException(MESSAGES.FLINK_EXIST);
     }
-    await this.flinkModel.insert(dto);
+    await this.flinkModel.save(dto);
   }
 
   /**
@@ -56,10 +56,12 @@ export class FlinkService {
    */
   async handleUpdate(id: string, dto: CreateFlinkDTO) {
     const existFlink = await this.flinkModel.findOneBy({ id });
+    console.log('existFlink: ', existFlink);
     if (!existFlink) {
       throw new BadRequestException(MESSAGES.NOT_FOUND);
     }
     await this.flinkModel.update(id, dto);
+    // await this.flinkModel.save({ ...existFlink, ...dto });
   }
 
   /**

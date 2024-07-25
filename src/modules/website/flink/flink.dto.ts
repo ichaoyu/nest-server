@@ -32,4 +32,10 @@ export class CreateFlinkDTO {
   remark: string;
 }
 
-export class UpdateFlinkDto extends CreateFlinkDTO {}
+export class UpdateFlinkDto extends CreateFlinkDTO {
+  @IsOptional()
+  title: string;
+
+  @IsOptional()
+  link: string;
+}

@@ -44,12 +44,16 @@ export class WebFlinkEntity {
   /**
    * 创建时间
    */
-  @CreateDateColumn({ name: 'create_time' })
+  @CreateDateColumn({
+    name: 'create_time',
+    update: false,
+    default: () => 'CURRENT_TIMESTAMP',
+  })
   createTime: Date;
 
   /**
    * 更新时间
    */
-  @UpdateDateColumn({ name: 'update_time' })
+  @UpdateDateColumn({ name: 'update_time', default: () => 'CURRENT_TIMESTAMP' })
   updateTime: Date;
 }
