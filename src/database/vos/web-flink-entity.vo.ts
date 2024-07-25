@@ -1,11 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-import { WebFriendlinkEntity } from '../entities';
+import { WebFlinkEntity } from '../entities';
 
 /**
  * 系统配置表响应传输对象
  */
-export class WebFriendlinkEntityVO implements WebFriendlinkEntity {
+export class WebFlinkEntityVO implements WebFlinkEntity {
   @ApiProperty({ description: '主键' })
   id: string;
 

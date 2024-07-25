@@ -9,8 +9,8 @@ import {
 /**
  * 友情链接表
  */
-@Entity({ name: 'web_friendlink' })
-export class WebFriendlinkEntity {
+@Entity({ name: 'web_flink' })
+export class WebFlinkEntity {
   /**
    * 主键
    */

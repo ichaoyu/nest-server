@@ -106,4 +106,8 @@ export enum MESSAGES {
    * 资源不存在
    */
   NOT_FOUND = '资源不存在',
+  /**
+   * 友情链接已存在
+   */
+  FLINK_EXIST = '友情链接已存在',
 }

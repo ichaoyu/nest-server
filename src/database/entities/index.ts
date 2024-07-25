@@ -9,7 +9,7 @@ export * from './sys-post.entity';
 export * from './sys-role.entity';
 export * from './sys-user.entity';
 export * from './web-siteinfo.entity';
-export * from './web-friendlink.entity';
+export * from './web-flink.entity';
 export * from './web-message.entity';
 export * from './web-article.entity';
 export * from './web-tag.entity';

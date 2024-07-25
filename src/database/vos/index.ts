@@ -11,6 +11,6 @@ export * from './sys-user-entity.vo';
 export * from './web-siteinfo-entity.vo';
 export * from './web-message.entity.vo';
 export * from './web-article.entity.vo';
-export * from './web-friendlink-entity.vo';
+export * from './web-flink-entity.vo';
 export * from './web-tag.entity.vo';
 export * from './web-category.entity.vo';
