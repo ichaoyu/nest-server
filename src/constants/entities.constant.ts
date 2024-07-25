@@ -208,3 +208,31 @@ export enum ENTITY_BIZ_STATUS {
    */
   FAIL = '1',
 }
+
+/**
+ * 目录类型
+ */
+export enum ENTITY_CATEGORY_TYPE {
+  /**
+   * 栏目
+   */
+  CATEGORY = '0',
+  /**
+   * 页面
+   */
+  PAGE = '1',
+}
+
+/**
+ * 打开方式
+ */
+export enum ENTITY_TARGET_TYPE {
+  /**
+   * 当前页面
+   */
+  SELF = '0',
+  /**
+   * 新页面
+   */
+  BLANK = '1',
+}

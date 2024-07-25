@@ -7,10 +7,10 @@ import {
 } from 'typeorm';
 
 /**
- * 友情链接表
+ * 留言表
  */
-@Entity({ name: 'web_friendlink' })
-export class WebFriendlinkEntity {
+@Entity({ name: 'web_message' })
+export class WebMessageEntity {
   /**
    * 主键
    */
@@ -18,28 +18,28 @@ export class WebFriendlinkEntity {
   id: string;
 
   /**
-   * 链接名称
+   * 姓名
    */
-  @Column({ name: 'title' })
-  title: string;
+  @Column({ name: 'name' })
+  name: string;
 
   /**
-   * 链接地址
+   * 电话
    */
-  @Column({ name: 'link' })
-  link: string;
+  @Column({ name: 'tel' })
+  tel: string;
 
   /**
-   * 排序
+   * 公司名称
    */
-  @Column({ name: 'sort' })
-  sort: string;
+  @Column({ name: 'company' })
+  company: string;
 
   /**
-   * 备注
+   * 留言内容
    */
-  @Column({ name: 'remark' })
-  remark: string;
+  @Column({ name: 'content' })
+  content: string;
 
   /**
    * 创建时间

@@ -103,12 +103,12 @@ export class WebSiteInfoEntity {
   /**
    * 创建时间
    */
-  @CreateDateColumn({ name: 'created_time' })
+  @CreateDateColumn({ name: 'create_time' })
   createTime: Date;
 
   /**
    * 更新时间
    */
-  @UpdateDateColumn({ name: 'updated_time' })
+  @UpdateDateColumn({ name: 'update_time' })
   updateTime: Date;
 }
