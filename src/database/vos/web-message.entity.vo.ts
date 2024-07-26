@@ -5,7 +5,7 @@ import { WebMessageEntity } from '../entities';
 /**
  * 系统配置表响应传输对象
  */
-export class WebMessagekEntityVO implements WebMessageEntity {
+export class WebMessageEntityVO implements WebMessageEntity {
   @ApiProperty({ description: '主键' })
   id: string;
 
