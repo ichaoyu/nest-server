@@ -1,0 +1,17 @@
+import { Web{{UpperCaseName}}EntityVO } from '@/database';
+import { PageVO, ResultVO } from '@/models';
+
+/**
+ * 分页响应传输对象
+ */
+class {{UpperCaseName}}PageVO extends PageVO(Web{{UpperCaseName}}EntityVO) {}
+
+/**
+ * 查询分页响应传输对象
+ */
+export class Find{{UpperCaseName}}PageVO extends ResultVO({{UpperCaseName}}PageVO) {}
+
+/**
+ * 获取值响应传输对象
+ */
+export class Get{{UpperCaseName}}ValueVO extends ResultVO(Web{{UpperCaseName}}EntityVO) {}

@@ -1,0 +1,75 @@
+import { Web{{UpperCaseName}}Entity } from '@/database';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Create{{UpperCaseName}}DTO, Find{{UpperCaseName}}PageDTO } from './{{name}}.dto';
+import { MESSAGES } from '@/constants';
+import { DelDTO } from '@/models';
+
+@Injectable()
+export class {{UpperCaseName}}Service {
+  constructor(
+    @InjectRepository(Web{{UpperCaseName}}Entity)
+    private {{name}}Model: Repository<Web{{UpperCaseName}}Entity>,
+  ) {}
+
+  /**
+   * 获取分页列表
+   * @param dto findPageDto
+   * @returns
+   */
+  async handleFindPage(dto: Find{{UpperCaseName}}PageDTO) {
+    const { pageNum, pageSize, ...rest } = dto;
+    const [list, total] = await this.{{name}}Model.findAndCount({
+      where: {
+        ...rest,
+      },
+      take: pageSize,
+      skip: (pageNum - 1) * pageSize,
+    });
+
+    return {
+      pageNum,
+      pageSize,
+      total,
+      list,
+    };
+  }
+
+  /**
+   * 新建
+   * @param dto Create{{UpperCaseName}}DTO
+   */
+  async handleCreate(dto: Create{{UpperCaseName}}DTO) {
+    const { title } = dto;
+    const existConfig = await this.{{name}}Model.findOneBy({ title });
+    if (existConfig) {
+      throw new BadRequestException(MESSAGES.FLINK_EXIST);
+    }
+    await this.{{name}}Model.save(dto);
+  }
+
+  /**
+   * 更新
+   * @param id string id
+   * @param dto Create{{UpperCaseName}}DTO
+   */
+  async handleUpdate(id: string, dto: Create{{UpperCaseName}}DTO) {
+    const exist{{UpperCaseName}} = await this.{{name}}Model.findOneBy({ id });
+    console.log('exist{{UpperCaseName}}: ', exist{{UpperCaseName}});
+    if (!exist{{UpperCaseName}}) {
+      throw new BadRequestException(MESSAGES.NOT_FOUND);
+    }
+    await this.{{name}}Model.update(id, dto);
+    // await this.{{name}}Model.save({ ...exist{{UpperCaseName}}, ...dto });
+  }
+
+  /**
+   * 批量删除
+   * @param dto DelDTO
+   */
+  async handleDeleteMany(dto: DelDTO) {
+    const { ids } = dto;
+    await this.{{name}}Model.delete(ids);
+  }
+}

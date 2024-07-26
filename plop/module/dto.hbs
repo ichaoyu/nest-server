@@ -1,0 +1,18 @@
+import { PageDTO } from '@/models';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty, IsOptional, IsUrl, MaxLength } from 'class-validator';
+
+export class Find{{UpperCaseName}}PageDTO extends PageDTO {
+  @ApiProperty({ description: 'demo名称' })
+  @IsOptional()
+  title: string;
+}
+
+export class Create{{UpperCaseName}}DTO {
+  @ApiProperty({ description: '链接名称' })
+  @IsNotEmpty({ message: '链接名称不能为空' })
+  @MaxLength(15, { message: '链接名称不能超过15个字符' })
+  title: string;
+}
+
+export class Update{{UpperCaseName}}Dto extends Create{{UpperCaseName}}DTO {}

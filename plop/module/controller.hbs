@@ -1,0 +1,58 @@
+import { Controller, Body, Post, Put, Query, Delete } from '@nestjs/common';
+import {
+  ApiBearerAuth,
+  ApiOkResponse,
+  ApiOperation,
+  ApiQuery,
+  ApiTags,
+} from '@nestjs/swagger';
+import { OperLog, Permission } from '@/decorators';
+import { {{UpperCaseName}}Service } from './{{name}}.service';
+import { 
+  Create{{UpperCaseName}}DTO,
+  Find{{UpperCaseName}}PageDTO,
+  Update{{UpperCaseName}}Dto
+} from './{{name}}.dto';
+import { Find{{UpperCaseName}}PageVO } from './{{name}}.vo';
+import { ENTITY_BIZ_TYPE } from '@/constants';
+import { DelDTO } from '@/models';
+
+@ApiTags('{{title}}接口')
+@ApiBearerAuth()
+@Controller('/{{path}}/{{name}}')
+export class {{UpperCaseName}}Controller {
+  constructor(private {{name}}Service: {{UpperCaseName}}Service) {}
+
+  @ApiOperation({ summary: '获取分页列表' })
+  @ApiOkResponse({ type: Find{{UpperCaseName}}PageVO })
+  @Permission('website:{{name}}:list')
+  @Post('/list')
+  async getPages(@Body() dto: Find{{UpperCaseName}}PageDTO) {
+    return await this.{{name}}Service.handleFindPage(dto);
+  }
+
+  @ApiOperation({ summary: '新增{{title}}' })
+  @OperLog({ title: '{{title}}', bizType: ENTITY_BIZ_TYPE.INSERT })
+  @Permission('website:{{name}}:add')
+  @Post('/add')
+  async addLink(@Body() dto: Create{{UpperCaseName}}DTO) {
+    return await this.{{name}}Service.handleCreate(dto);
+  }
+
+  @ApiOperation({ summary: '更新{{title}}' })
+  @ApiQuery({ name: 'id', description: '更新主键' })
+  @OperLog({ title: '{{title}}', bizType: ENTITY_BIZ_TYPE.UPDATE })
+  @Permission('website:{{name}}:edit')
+  @Put('/update')
+  async update(@Query('id') id: string, @Body() dto: Update{{UpperCaseName}}Dto) {
+    await this.{{name}}Service.handleUpdate(id, dto);
+  }
+
+  @ApiOperation({ summary: '删除{{title}}' })
+  @OperLog({ title: '{{title}}', bizType: ENTITY_BIZ_TYPE.DELETE })
+  @Permission('website:{{name}}:remove')
+  @Delete('/delete')
+  async deleteMany(@Body() dto: DelDTO) {
+    await this.{{name}}Service.handleDeleteMany(dto);
+  }
+}
