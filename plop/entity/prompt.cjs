@@ -15,7 +15,7 @@ module.exports = {
     {
       type: 'input',
       name: 'name',
-      message: '请输入实体名称下划线格式（如： sys_config）',
+      message: '请输入实体名称下划线格式（如：sys_config）',
     },
   ],
   actions: (data) => {

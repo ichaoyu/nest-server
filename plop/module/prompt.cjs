@@ -6,11 +6,12 @@ module.exports = {
       type: 'input',
       name: 'path',
       message: '请输入路径（如：website）',
+      default: 'website',
     },
     {
       type: 'input',
       name: 'name',
-      message: '请输入模块名称（如： flink）',
+      message: '请输入模块名称（如：flink）',
     },
     {
       type: 'input',
@@ -23,10 +24,10 @@ module.exports = {
     const UpperCaseName = toUpperCase(name);
 
     const actions = [];
-    if (name) {
+    if (name && path && title) {
       actions.push(
         {
-          type: 'addMany',
+          type: 'add',
           path: `./src/modules/${path}/${name}/index.ts`,
           templateFile: './plop/module/index.hbs',
           data: {
