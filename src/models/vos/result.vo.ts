@@ -10,10 +10,10 @@ export function ResultVO<T>(classRef: T) {
     timestamp: number;
 
     @ApiProperty({ description: '状态码', example: 200 })
-    status: number;
+    code: number;
 
     @ApiProperty({ description: '响应消息', example: 'ok' })
-    message: string;
+    msg: string;
 
     @ApiProperty({ description: '响应数据', type: classRef })
     data: T;
