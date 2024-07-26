@@ -10,7 +10,7 @@ import { ConfigService } from '@nestjs/config';
 import { map } from 'rxjs';
 
 import { MESSAGES } from '@/constants';
-import { IRequest } from '@/interfaces';
+import { IRequest, type IResponse } from '@/interfaces';
 
 /**
  * 响应拦截器
@@ -28,6 +28,10 @@ export class ResponseInterceptor implements NestInterceptor {
 
     if (!isApi) {
       return next.handle();
+    }
+    if (request.method === 'POST') {
+      const response = context.switchToHttp().getResponse<IResponse>();
+      response.status(200);
     }
 
     return next.handle().pipe(

@@ -1,4 +1,11 @@
-import { Controller, Body, Post, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Body,
+  Post,
+  Delete,
+  HttpCode,
+  HttpStatus,
+} from '@nestjs/common';
 import {
   ApiBearerAuth,
   ApiOkResponse,
@@ -22,6 +29,7 @@ export class MessageController {
   @ApiOkResponse({ type: FindMessagePageVO })
   @Permission('website:message:list')
   @Post('/list')
+  // @HttpCode(HttpStatus.OK)
   async getPages(@Body() dto: FindMessagePageDTO) {
     return await this.messageService.handleFindPage(dto);
   }
