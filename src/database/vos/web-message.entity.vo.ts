@@ -7,7 +7,7 @@ import { WebMessageEntity } from '../entities';
  */
 export class WebMessageEntityVO implements WebMessageEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '姓名' })
   name: string;

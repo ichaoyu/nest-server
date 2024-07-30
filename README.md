@@ -1,6 +1,6 @@
 ## Description
 
-a nestjs server
+a server by nestjs
 
 ## 安装使用
 
@@ -8,12 +8,6 @@ a nestjs server
 
 ```bash
 pnpm i
-```
-
-- 部署 Docker 服务
-
-```bash
-docker-compose -p fullstack up
 ```
 
 - 运行
@@ -28,12 +22,6 @@ pnpm dev
 pnpm build
 ```
 
-- 预览
-
-```bash
-pnpm start
-```
-
 - NestJS 执行顺序：中间件 -> 守卫 -> 拦截器/管道 -> 异常过滤器
 - TypeOrm 查询 `select: false` 的列需要用 `createQueryBuilder`
 - TypeOrm 需要用 `save` 触发关联表操作，`insert` 只影响当前表
@@ -41,5 +29,3 @@ pnpm start
 - 使用 `IntersectionType` 合并对象是需要逐步创建对象，否则会与其他匿名对象冲突
 - DTO 结尾表示请求传输对象，VO 结尾表示响应传输对象
 - 如果请求传输数据是对象的话，需要对每一项加上 `class-validator` 的装饰器
-- Grafana 使用线上模板ID `11159`； 使用服务名连接：`http://prometheus:9090`
-- NestJS 依赖注入的类型需要保留，所以不能用 `import type` 导入

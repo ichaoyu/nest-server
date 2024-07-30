@@ -15,7 +15,7 @@ export class WebMessageEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 姓名
