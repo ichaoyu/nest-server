@@ -1,7 +1,7 @@
 import { WebFlinkEntity } from '@/database';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, Like } from 'typeorm';
 import { CreateFlinkDTO, FindFlinkPageDTO } from './flink.dto';
 import { MESSAGES } from '@/constants';
 import { DelDTO } from '@/models';
@@ -19,11 +19,12 @@ export class FlinkService {
    * @returns
    */
   async handleFindPage(dto: FindFlinkPageDTO) {
-    const { pageNum, pageSize, ...rest } = dto;
+    const { pageNum, pageSize, keywords, ...where } = dto;
     const [list, total] = await this.flinkModel.findAndCount({
-      where: {
-        ...rest,
-      },
+      where: [
+        { title: keywords ? Like(`%${keywords}%`) : null },
+        { link: keywords ? Like(`%${keywords}%`) : null },
+      ],
       take: pageSize,
       skip: (pageNum - 1) * pageSize,
     });

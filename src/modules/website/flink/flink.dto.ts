@@ -3,13 +3,9 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsOptional, IsUrl, MaxLength } from 'class-validator';
 
 export class FindFlinkPageDTO extends PageDTO {
-  @ApiProperty({ description: '链接名称' })
+  @ApiProperty({ description: '链接名称或链接地址', default: '' })
   @IsOptional()
-  title: string;
-
-  @ApiProperty({ description: '链接地址' })
-  @IsOptional()
-  link: string;
+  keywords: string;
 }
 
 export class CreateFlinkDTO {

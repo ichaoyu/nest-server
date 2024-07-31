@@ -10,7 +10,7 @@ import { ConfigService } from '@nestjs/config';
 import { map } from 'rxjs';
 
 import { MESSAGES } from '@/constants';
-import { IRequest, type IResponse } from '@/interfaces';
+import { IRequest, IResponse } from '@/interfaces';
 
 /**
  * 响应拦截器
