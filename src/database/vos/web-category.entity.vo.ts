@@ -40,7 +40,7 @@ export class WebCategoryEntityVO implements WebCategoryEntity {
   url: string;
 
   @ApiProperty({ description: '排序' })
-  sort: string;
+  sort: number;
 
   @ApiProperty({ description: '打开方式' })
   target: string;

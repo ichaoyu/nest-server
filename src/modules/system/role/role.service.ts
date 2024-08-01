@@ -64,7 +64,7 @@ export class RoleService {
     };
   }
 
-  async handleFindAllocatedPage(id: string, dto: FindAllocatedPageDTO) {
+  async handleFindAllocatedPage(id: number, dto: FindAllocatedPageDTO) {
     const { pageNum, pageSize, ...where } = dto;
 
     const [list, total] = await this.userModel.findAndCount({
@@ -85,7 +85,7 @@ export class RoleService {
     };
   }
 
-  async handleCancelAllocated(id: string, dto: DelDTO) {
+  async handleCancelAllocated(id: number, dto: DelDTO) {
     const { ids: userIds } = dto;
 
     const role = await this.roleModel.findOne({
@@ -117,7 +117,7 @@ export class RoleService {
     });
   }
 
-  async handleUpdate(id: string, dto: UpdateRoleDTO) {
+  async handleUpdate(id: number, dto: UpdateRoleDTO) {
     const { userName } = this.contextService.getPayload();
 
     const role = await this.roleModel.findOne({
@@ -189,7 +189,7 @@ export class RoleService {
     await this.roleModel.save(role);
   }
 
-  async handleFindUnallocatedPage(id: string, dto: FindUnallocatedPageDTO) {
+  async handleFindUnallocatedPage(id: number, dto: FindUnallocatedPageDTO) {
     const { pageNum, pageSize, ...where } = dto;
 
     const allocatedUsers = await this.userModel.find({
@@ -215,7 +215,7 @@ export class RoleService {
     };
   }
 
-  async handleAllocate(id: string, dto: AllocateDTO) {
+  async handleAllocate(id: number, dto: AllocateDTO) {
     const { ids } = dto;
 
     const role = await this.roleModel.findOne({

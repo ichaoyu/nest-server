@@ -33,7 +33,7 @@ export class WebFlinkEntity {
    * 排序
    */
   @Column({ name: 'sort' })
-  sort: string;
+  sort: number;
 
   /**
    * 备注

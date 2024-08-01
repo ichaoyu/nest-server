@@ -58,7 +58,7 @@ export class DeptController {
   @OperLog({ title: '部门管理', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:dept:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: UpdateDeptDTO) {
+  async update(@Query('id') id: number, @Body() dto: UpdateDeptDTO) {
     await this.deptService.handleUpdate(id, dto);
   }
 

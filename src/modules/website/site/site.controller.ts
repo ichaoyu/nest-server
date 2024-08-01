@@ -33,7 +33,7 @@ export class SiteController {
   @OperLog({ title: '更新网站配置', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('website:info:edit')
   @Put('/update')
-  async updateInfo(@Query('id') id: string, @Body() dto: UpdateConfigDTO) {
+  async updateInfo(@Query('id') id: number, @Body() dto: UpdateConfigDTO) {
     return await this.SiteService.handleUpdateSiteInfo(id, dto);
   }
 }

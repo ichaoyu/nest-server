@@ -73,7 +73,7 @@ export class DictDataService {
     });
   }
 
-  async handleUpdate(id: string, dto: UpdateDictDataDTO) {
+  async handleUpdate(id: number, dto: UpdateDictDataDTO) {
     const { userName } = this.contextService.getPayload();
 
     const existDictData = await this.dictDataModel.findOneBy({ id });

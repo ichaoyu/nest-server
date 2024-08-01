@@ -55,7 +55,7 @@ export class FlinkService {
    * @param id string id
    * @param dto CreateFlinkDTO
    */
-  async handleUpdate(id: string, dto: CreateFlinkDTO) {
+  async handleUpdate(id: number, dto: CreateFlinkDTO) {
     const existFlink = await this.flinkModel.findOneBy({ id });
     console.log('existFlink: ', existFlink);
     if (!existFlink) {

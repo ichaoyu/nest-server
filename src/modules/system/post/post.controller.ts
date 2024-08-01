@@ -42,7 +42,7 @@ export class PostController {
   @OperLog({ title: '岗位管理', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:post:edit')
   @Put('/update')
-  async updatePost(@Query('id') id: string, @Body() dto: UpdatePostDTO) {
+  async updatePost(@Query('id') id: number, @Body() dto: UpdatePostDTO) {
     await this.postService.handleUpdate(id, dto);
   }
 

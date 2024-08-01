@@ -109,7 +109,7 @@ export class UserService {
     });
   }
 
-  async handleUpdate(id: string, dto: UpdateUserDTO) {
+  async handleUpdate(id: number, dto: UpdateUserDTO) {
     const { userName } = this.contextService.getPayload();
     const { postIds, roleIds, ...rest } = dto;
 
@@ -248,7 +248,7 @@ export class UserService {
     });
   }
 
-  async handleResetPassword(id: string, dto: ResetPasswordDTO) {
+  async handleResetPassword(id: number, dto: ResetPasswordDTO) {
     const existUser = await this.userModel.findOneBy({ id });
 
     if (!existUser) {

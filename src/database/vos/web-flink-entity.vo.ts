@@ -16,7 +16,7 @@ export class WebFlinkEntityVO implements WebFlinkEntity {
   link: string;
 
   @ApiProperty({ description: '排序' })
-  sort: string;
+  sort: number;
 
   @ApiProperty({ description: '备注' })
   remark: string;

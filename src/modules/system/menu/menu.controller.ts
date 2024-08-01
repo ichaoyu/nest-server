@@ -58,7 +58,7 @@ export class MenuController {
   @OperLog({ title: '菜单管理', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:menu:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: UpdateMenuDTO) {
+  async update(@Query('id') id: number, @Body() dto: UpdateMenuDTO) {
     await this.menuService.handleUpdate(id, dto);
   }
 

@@ -113,7 +113,7 @@ export class CaptchaService {
     return id;
   }
 
-  async check(id: string, value: string): Promise<boolean> {
+  async check(id: number, value: string): Promise<boolean> {
     if (!id || !value) {
       return false;
     }

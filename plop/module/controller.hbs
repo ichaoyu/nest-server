@@ -44,7 +44,7 @@ export class {{UpperCaseName}}Controller {
   @OperLog({ title: '{{title}}', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('website:{{name}}:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: Update{{UpperCaseName}}Dto) {
+  async update(@Query('id') id: number, @Body() dto: Update{{UpperCaseName}}Dto) {
     await this.{{name}}Service.handleUpdate(id, dto);
   }
 

@@ -66,7 +66,7 @@ export class ConfigController {
   @OperLog({ title: '参数配置', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:config:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: UpdateConfigDTO) {
+  async update(@Query('id') id: number, @Body() dto: UpdateConfigDTO) {
     await this.configService.handleUpdate(id, dto);
   }
 

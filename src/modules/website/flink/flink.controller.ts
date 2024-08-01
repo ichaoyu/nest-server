@@ -40,7 +40,7 @@ export class FlinkController {
   @OperLog({ title: '友情链接', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('website:flink:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: UpdateFlinkDto) {
+  async update(@Query('id') id: number, @Body() dto: UpdateFlinkDto) {
     await this.flinkService.handleUpdate(id, dto);
   }
 

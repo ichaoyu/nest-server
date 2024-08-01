@@ -65,7 +65,7 @@ export class ConfigService {
     });
   }
 
-  async handleUpdate(id: string, dto: UpdateConfigDTO) {
+  async handleUpdate(id: number, dto: UpdateConfigDTO) {
     const { userName } = this.contextService.getPayload();
 
     const existConfig = await this.configModel.findOneBy({ id });

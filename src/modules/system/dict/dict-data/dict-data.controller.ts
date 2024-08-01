@@ -66,7 +66,7 @@ export class DictDataController {
   @OperLog({ title: '字典数据', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:dict:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: UpdateDictDataDTO) {
+  async update(@Query('id') id: number, @Body() dto: UpdateDictDataDTO) {
     await this.dictDataService.handleUpdate(id, dto);
   }
 

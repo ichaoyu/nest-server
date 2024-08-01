@@ -47,7 +47,7 @@ export class MenuService {
     await this.menuModel.insert({ ...dto, createBy: userName });
   }
 
-  async handleUpdate(id: string, dto: UpdateMenuDTO) {
+  async handleUpdate(id: number, dto: UpdateMenuDTO) {
     const { userName } = this.contextService.getPayload();
 
     const existMenu = await this.menuModel.findOneBy({ id });

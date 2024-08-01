@@ -27,7 +27,7 @@ export class PostService {
     await this.postModel.insert({ ...dto, createBy: userName });
   }
 
-  async handleUpdate(id: string, dto: UpdatePostDTO) {
+  async handleUpdate(id: number, dto: UpdatePostDTO) {
     const { userName } = this.contextService.getPayload();
 
     const existPost = await this.postModel.findOneBy({ id });

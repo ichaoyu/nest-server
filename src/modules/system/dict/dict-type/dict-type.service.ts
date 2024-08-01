@@ -63,7 +63,7 @@ export class DictTypeService {
     await this.dictTypeModel.delete(ids);
   }
 
-  async handleUpdate(id: string, dto: UpdateDictTypeDTO) {
+  async handleUpdate(id: number, dto: UpdateDictTypeDTO) {
     const { userName } = this.contextService.getPayload();
 
     const existDictType = await this.dictTypeModel.findOneBy({ id });

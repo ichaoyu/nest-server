@@ -53,7 +53,7 @@ export class RoleController {
   @OperLog({ title: '角色管理', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:role:edit')
   @Put('/update')
-  async update(@Query('id') id: string, @Body() dto: UpdateRoleDTO) {
+  async update(@Query('id') id: number, @Body() dto: UpdateRoleDTO) {
     await this.roleService.handleUpdate(id, dto);
   }
 
@@ -89,7 +89,7 @@ export class RoleController {
   @Permission('system:role:list')
   @Post('/allocatedPage')
   async findAllocatedPage(
-    @Query('id') id: string,
+    @Query('id') id: number,
     @Body() dto: FindAllocatedPageDTO,
   ) {
     return await this.roleService.handleFindAllocatedPage(id, dto);
@@ -100,7 +100,7 @@ export class RoleController {
   @OperLog({ title: '角色管理', bizType: ENTITY_BIZ_TYPE.GRANT })
   @Permission('system:role:edit')
   @Put('/cancelAllocated')
-  async cancelAllocated(@Query('id') id: string, @Body() dto: DelDTO) {
+  async cancelAllocated(@Query('id') id: number, @Body() dto: DelDTO) {
     await this.roleService.handleCancelAllocated(id, dto);
   }
 
@@ -110,7 +110,7 @@ export class RoleController {
   @Permission('system:role:list')
   @Post('/unallocatedPage')
   async findUnallocatedPage(
-    @Query('id') id: string,
+    @Query('id') id: number,
     @Body() dto: FindUnallocatedPageDTO,
   ) {
     return await this.roleService.handleFindUnallocatedPage(id, dto);
@@ -121,7 +121,7 @@ export class RoleController {
   @OperLog({ title: '角色管理', bizType: ENTITY_BIZ_TYPE.GRANT })
   @Permission('system:role:edit')
   @Put('/allocate')
-  async allocate(@Query('id') id: string, @Body() dto: AllocateDTO) {
+  async allocate(@Query('id') id: number, @Body() dto: AllocateDTO) {
     await this.roleService.handleAllocate(id, dto);
   }
 }

@@ -54,7 +54,7 @@ export class {{UpperCaseName}}Service {
    * @param id string id
    * @param dto Create{{UpperCaseName}}DTO
    */
-  async handleUpdate(id: string, dto: Create{{UpperCaseName}}DTO) {
+  async handleUpdate(id: number, dto: Create{{UpperCaseName}}DTO) {
     const exist{{UpperCaseName}} = await this.{{name}}Model.findOneBy({ id });
     console.log('exist{{UpperCaseName}}: ', exist{{UpperCaseName}});
     if (!exist{{UpperCaseName}}) {

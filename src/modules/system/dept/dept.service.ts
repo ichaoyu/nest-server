@@ -80,7 +80,7 @@ export class DeptService {
     }
   }
 
-  async handleUpdate(id: string, dto: UpdateDeptDTO) {
+  async handleUpdate(id: number, dto: UpdateDeptDTO) {
     const { parentId } = dto;
     const { userName } = this.contextService.getPayload();
 

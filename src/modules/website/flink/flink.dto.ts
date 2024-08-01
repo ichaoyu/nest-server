@@ -21,7 +21,7 @@ export class CreateFlinkDTO {
 
   @ApiProperty({ description: '排序' })
   @IsOptional()
-  sort: string;
+  sort: number;
 
   @ApiProperty({ description: '备注' })
   @IsOptional()

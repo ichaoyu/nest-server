@@ -22,7 +22,7 @@ export class SiteService {
   }
 
   // 更新网站配置
-  async handleUpdateSiteInfo(id: string, dto: UpdateConfigDTO) {
+  async handleUpdateSiteInfo(id: number, dto: UpdateConfigDTO) {
     const { userName } = this.contextService.getPayload();
     const existConfig = await this.siteModel.findOneBy({ id });
     if (!existConfig) {

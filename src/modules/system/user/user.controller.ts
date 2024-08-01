@@ -80,7 +80,7 @@ export class UserController {
   @OperLog({ title: '用户管理', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:user:edit')
   @Put('/update')
-  async updateUser(@Query('id') id: string, @Body() dto: UpdateUserDTO) {
+  async updateUser(@Query('id') id: number, @Body() dto: UpdateUserDTO) {
     await this.userService.handleUpdate(id, dto);
   }
 
@@ -126,7 +126,7 @@ export class UserController {
   @OperLog({ title: '用户管理', bizType: ENTITY_BIZ_TYPE.UPDATE })
   @Permission('system:user:edit')
   @Put('/resetPassword')
-  async resetPassword(@Query('id') id: string, @Body() dto: ResetPasswordDTO) {
+  async resetPassword(@Query('id') id: number, @Body() dto: ResetPasswordDTO) {
     await this.userService.handleResetPassword(id, dto);
   }
 

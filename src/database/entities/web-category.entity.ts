@@ -87,7 +87,7 @@ export class WebCategoryEntity {
    * 排序
    */
   @Column({ name: 'sort' })
-  sort: string;
+  sort: number;
 
   /**
    * 打开方式 0 当前页面打开 1 新页面打开
