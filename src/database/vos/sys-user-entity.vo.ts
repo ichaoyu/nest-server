@@ -22,7 +22,7 @@ export class SysUserEntityVO
   implements Omit<SysUserEntity, SysUserEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '用户账号' })
   userName: string;

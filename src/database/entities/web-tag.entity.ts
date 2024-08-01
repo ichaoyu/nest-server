@@ -18,7 +18,7 @@ export class WebTagEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 标签名称

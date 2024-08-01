@@ -7,7 +7,7 @@ import { WebSiteInfoEntity } from '../entities';
  */
 export class WebSiteInfoEntityVO implements WebSiteInfoEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '网站名称' })
   name: string;

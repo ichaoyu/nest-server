@@ -9,7 +9,7 @@ import { SysConfigEntity } from '../entities';
  */
 export class SysConfigEntityVO implements SysConfigEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '参数名称' })
   configName: string;

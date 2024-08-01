@@ -9,7 +9,7 @@ import { SysOperLogEntity } from '../entities';
  */
 export class SysOperLogEntityVO implements SysOperLogEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '操作模块' })
   title: string;

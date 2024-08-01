@@ -14,7 +14,7 @@ export class WebSiteInfoEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 网站名称

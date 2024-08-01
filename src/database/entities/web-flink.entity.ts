@@ -15,7 +15,7 @@ export class WebFlinkEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 链接名称

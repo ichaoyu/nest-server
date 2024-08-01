@@ -12,7 +12,7 @@ import {
  * 用户模板序列化
  */
 export class UserTemplateSerialize implements SysUserEntity {
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '用户账号' })
   userName: string;
@@ -67,7 +67,7 @@ export class UserTemplateSerialize implements SysUserEntity {
  */
 export class UserExportSerialize implements SysUserEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '用户账号' })
   userName: string;

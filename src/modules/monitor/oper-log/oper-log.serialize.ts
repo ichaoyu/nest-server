@@ -8,7 +8,7 @@ import { SysOperLogEntity } from '@/database';
  */
 export class OperLogExportSerialize implements SysOperLogEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '系统模块' })
   title: string;

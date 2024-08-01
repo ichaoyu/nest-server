@@ -7,7 +7,7 @@ import { WebCategoryEntity } from '../entities';
  */
 export class WebCategoryEntityVO implements WebCategoryEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '父级栏目' })
   pid: string;

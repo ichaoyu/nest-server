@@ -8,7 +8,7 @@ import { SysConfigEntity } from '@/database';
  */
 export class ConfigExportSerialize implements SysConfigEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '参数名称' })
   configName: string;

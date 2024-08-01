@@ -15,7 +15,7 @@ export class WebTagEntityVO
   implements Omit<WebTagEntity, WebTagEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '标签名称' })
   name: string;

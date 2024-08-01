@@ -17,7 +17,7 @@ export class SysDictTypeEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 字典名称

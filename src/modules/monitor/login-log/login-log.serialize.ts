@@ -8,7 +8,7 @@ import { SysLoginLogEntity } from '@/database';
  */
 export class LoginLogExportSerialize implements SysLoginLogEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '用户账号' })
   userName: string;

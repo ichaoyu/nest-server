@@ -22,7 +22,7 @@ export class SysRoleEntityVO
   implements Omit<SysRoleEntity, SysRoleEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '角色名称' })
   roleName: string;

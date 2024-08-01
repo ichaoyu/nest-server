@@ -8,7 +8,7 @@ import { SysDictDataEntity } from '@/database';
  */
 export class DictDataExportSerialize implements SysDictDataEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '显示顺序' })
   dictSort: number;

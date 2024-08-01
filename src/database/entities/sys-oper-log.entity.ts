@@ -11,7 +11,7 @@ export class SysOperLogEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 操作模块

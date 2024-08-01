@@ -23,7 +23,7 @@ export class CaptchaService {
   ) {}
 
   async image(options?: ImageCaptchaOptions): Promise<{
-    id: string;
+    id: number;
     imageBase64: string;
   }> {
     const { width, height, type, size, noise } = Object.assign(
@@ -73,7 +73,7 @@ export class CaptchaService {
   }
 
   async text(options?: TextCaptchaOptions): Promise<{
-    id: string;
+    id: number;
     text: string;
   }> {
     const textOptions = Object.assign(

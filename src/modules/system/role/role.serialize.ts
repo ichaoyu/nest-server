@@ -8,7 +8,7 @@ import { SysRoleEntity } from '@/database';
  */
 export class RoleExportSerialize implements SysRoleEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '角色名称' })
   roleName: string;

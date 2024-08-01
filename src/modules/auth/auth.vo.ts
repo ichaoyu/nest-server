@@ -12,7 +12,7 @@ export class LoginVO extends ResultVO(String) {}
  */
 class CaptchaVO {
   @ApiProperty({ description: '验证码ID' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '验证码编码' })
   imageBase64: string;

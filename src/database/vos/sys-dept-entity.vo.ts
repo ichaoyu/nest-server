@@ -17,7 +17,7 @@ export class SysDeptEntityVO
   implements Omit<SysDeptEntity, SysDeptEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '上级主键' })
   parentId: string;

@@ -7,7 +7,7 @@ import { WebFlinkEntity } from '../entities';
  */
 export class WebFlinkEntityVO implements WebFlinkEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '链接名称' })
   title: string;

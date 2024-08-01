@@ -9,7 +9,7 @@ import { SysDictDataEntity } from '../entities';
  */
 export class SysDictDataEntityVO implements SysDictDataEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '显示顺序' })
   dictSort: number;

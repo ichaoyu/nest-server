@@ -15,7 +15,7 @@ export class WebArticleEntityVO
   implements Omit<WebArticleEntity, WebArticleEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '栏目id' })
   cid: string;

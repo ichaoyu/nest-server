@@ -21,7 +21,7 @@ export class WebCategoryEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: string;
+  id: number;
 
   /**
    * 父级栏目

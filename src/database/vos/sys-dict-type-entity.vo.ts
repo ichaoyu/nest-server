@@ -9,7 +9,7 @@ import { SysDictTypeEntity } from '../entities';
  */
 export class SysDictTypeEntityVO implements SysDictTypeEntity {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '字典名称' })
   dictName: string;

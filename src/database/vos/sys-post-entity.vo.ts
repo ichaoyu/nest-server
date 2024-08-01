@@ -17,7 +17,7 @@ export class SysPostEntityVO
   implements Omit<SysPostEntity, SysPostEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '岗位编码' })
   postCode: string;

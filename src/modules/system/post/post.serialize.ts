@@ -8,7 +8,7 @@ import { SysPostEntity, SysUserEntity } from '@/database';
  */
 export class PostExportSerialize implements SysPostEntity {
   @ExcelColumn({ header: '主键' })
-  id: string;
+  id: number;
 
   @ExcelColumn({ header: '岗位编码' })
   postCode: string;

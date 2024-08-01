@@ -23,7 +23,7 @@ export class SysMenuEntityVO
   implements Omit<SysMenuEntity, SysMenuEntityRelations>
 {
   @ApiProperty({ description: '主键' })
-  id: string;
+  id: number;
 
   @ApiProperty({ description: '菜单名称' })
   menuName: string;
