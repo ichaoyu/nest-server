@@ -1,8 +1,12 @@
 import { Web{{UpperCaseName}}Entity } from '@/database';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Create{{UpperCaseName}}DTO, Find{{UpperCaseName}}PageDTO } from './{{name}}.dto';
+import { Repository, Like } from 'typeorm';
+import {
+  Create{{UpperCaseName}}DTO,
+  Find{{UpperCaseName}}PageDTO,
+  Update{{UpperCaseName}}Dto,
+} from './article.dto';
 import { MESSAGES } from '@/constants';
 import { DelDTO } from '@/models';
 
@@ -19,10 +23,11 @@ export class {{UpperCaseName}}Service {
    * @returns
    */
   async handleFindPage(dto: Find{{UpperCaseName}}PageDTO) {
-    const { pageNum, pageSize, ...rest } = dto;
+    const { pageNum, pageSize, keywords } = dto;
     const [list, total] = await this.{{name}}Model.findAndCount({
-      where: {
-        ...rest,
+      where: [{ name: keywords ? Like(`%${keywords}%`) : null }],
+      order: {
+        updateTime: 'DESC',
       },
       take: pageSize,
       skip: (pageNum - 1) * pageSize,
@@ -51,17 +56,15 @@ export class {{UpperCaseName}}Service {
 
   /**
    * 更新
-   * @param id string id
-   * @param dto Create{{UpperCaseName}}DTO
+   * @param id number id
+   * @param dto Update{{UpperCaseName}}DTO
    */
-  async handleUpdate(id: number, dto: Create{{UpperCaseName}}DTO) {
+  async handleUpdate(id: number, dto: Update{{UpperCaseName}}DTO) {
     const exist{{UpperCaseName}} = await this.{{name}}Model.findOneBy({ id });
-    console.log('exist{{UpperCaseName}}: ', exist{{UpperCaseName}});
     if (!exist{{UpperCaseName}}) {
       throw new BadRequestException(MESSAGES.NOT_FOUND);
     }
-    await this.{{name}}Model.update(id, dto);
-    // await this.{{name}}Model.save({ ...exist{{UpperCaseName}}, ...dto });
+    await this.{{name}}Model.save({ ...exist{{UpperCaseName}}, ...dto });
   }
 
   /**

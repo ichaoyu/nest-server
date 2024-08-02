@@ -3,9 +3,9 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsOptional, IsUrl, MaxLength } from 'class-validator';
 
 export class Find{{UpperCaseName}}PageDTO extends PageDTO {
-  @ApiProperty({ description: 'demo名称' })
+  @ApiProperty({ description: '名称' })
   @IsOptional()
-  title: string;
+  keywords: string;
 }
 
 export class Create{{UpperCaseName}}DTO {
