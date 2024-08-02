@@ -19,12 +19,16 @@ export class FlinkService {
    * @returns
    */
   async handleFindPage(dto: FindFlinkPageDTO) {
-    const { pageNum, pageSize, keywords, ...where } = dto;
+    const { pageNum, pageSize, keywords } = dto;
     const [list, total] = await this.flinkModel.findAndCount({
       where: [
         { title: keywords ? Like(`%${keywords}%`) : null },
         { link: keywords ? Like(`%${keywords}%`) : null },
       ],
+      order: {
+        sort: 'ASC',
+        updateTime: 'DESC',
+      },
       take: pageSize,
       skip: (pageNum - 1) * pageSize,
     });
@@ -57,12 +61,11 @@ export class FlinkService {
    */
   async handleUpdate(id: number, dto: CreateFlinkDTO) {
     const existFlink = await this.flinkModel.findOneBy({ id });
-    console.log('existFlink: ', existFlink);
     if (!existFlink) {
       throw new BadRequestException(MESSAGES.NOT_FOUND);
     }
-    await this.flinkModel.update(id, dto);
-    // await this.flinkModel.save({ ...existFlink, ...dto });
+    // await this.flinkModel.update(id, dto);
+    await this.flinkModel.save({ ...existFlink, ...dto });
   }
 
   /**

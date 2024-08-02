@@ -4,6 +4,7 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  type Timestamp,
 } from 'typeorm';
 
 /**
@@ -46,7 +47,6 @@ export class WebFlinkEntity {
    */
   @CreateDateColumn({
     name: 'create_time',
-    update: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
   createTime: Date;
@@ -54,6 +54,10 @@ export class WebFlinkEntity {
   /**
    * 更新时间
    */
-  @UpdateDateColumn({ name: 'update_time', default: () => 'CURRENT_TIMESTAMP' })
+  @UpdateDateColumn({
+    name: 'update_time',
+    update: true,
+    default: () => 'CURRENT_TIMESTAMP',
+  })
   updateTime: Date;
 }
