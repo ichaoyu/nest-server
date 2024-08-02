@@ -133,11 +133,11 @@ export class WebArticleEntity {
   /**
    * 关联标签
    */
-  @ManyToMany(() => WebTagEntity, (tag) => tag.article_id)
+  @ManyToMany(() => WebTagEntity, (tag) => tag.articles)
   @JoinTable({
     name: 'web_article_tag',
     joinColumn: { name: 'article_id' },
     inverseJoinColumn: { name: 'tag_id' },
   })
-  tag_id: WebTagEntity[];
+  tags: WebTagEntity[];
 }
