@@ -147,21 +147,21 @@ export class UserService {
     // })
   }
 
-  async handleGetFormData(id?: string) {
+  async handleGetFormData(id?: number) {
     const posts = await this.postModel.findBy({
       status: ENTITY_STATUS.NORMAL,
     });
     const roles = await this.roleModel.findBy({
       delFlag: ENTITY_DEL_FLAG.EXIST,
-      id: Not('1'),
+      id: Not(1),
     });
 
     const data = <
       {
         posts: SysPostEntity[];
         roles: SysRoleEntity[];
-        postIds?: string[];
-        roleIds?: string[];
+        postIds?: number[];
+        roleIds?: number[];
       }
     >{
       posts,
@@ -261,7 +261,7 @@ export class UserService {
     await this.userModel.update(id, { password, updateBy: userName });
   }
 
-  async handleToggleStatus(id: string) {
+  async handleToggleStatus(id: number) {
     const { userName } = this.contextService.getPayload();
 
     const existUser = await this.userModel.findOneBy({ id });

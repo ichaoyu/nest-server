@@ -35,14 +35,14 @@ class UserFormDataVO {
     type: 'array',
     items: { type: 'string' },
   })
-  postIds?: string[];
+  postIds?: number[];
 
   @ApiProperty({
     description: '角色主键列表',
     type: 'array',
     items: { type: 'string' },
   })
-  roleIds?: string[];
+  roleIds?: number[];
 }
 
 /**

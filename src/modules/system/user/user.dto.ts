@@ -102,7 +102,7 @@ export class CreateUserDTO {
   })
   @IsOptional()
   @IsArray()
-  postIds: string[];
+  postIds: number[];
 
   @ApiPropertyOptional({
     description: '角色主键数组',
@@ -111,7 +111,7 @@ export class CreateUserDTO {
   })
   @IsOptional()
   @IsArray()
-  roleIds: string[];
+  roleIds: number[];
 
   @ApiPropertyOptional({ description: '备注' })
   @IsOptional()

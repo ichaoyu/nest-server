@@ -89,7 +89,7 @@ export class SysUserEntityRelationsVO
   implements Pick<SysUserEntity, SysUserEntityRelations>
 {
   @ApiProperty({ description: '部门主键' })
-  deptId: string;
+  deptId: number;
 
   @ApiPropertyOptional({
     description: '关联部门',

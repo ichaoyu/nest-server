@@ -47,6 +47,6 @@ export class WebTagEntity {
   /**
    * 关联文章
    */
-  @ManyToMany(() => WebArticleEntity, (article) => article.tag_id)
-  article_id: WebArticleEntity[];
+  @ManyToMany(() => WebArticleEntity, (article) => article.tags)
+  articles: WebArticleEntity[];
 }
