@@ -6,7 +6,7 @@ import { WebArticleEntityVO } from '.';
 /**
  * 文章标签表关联项
  */
-type WebTagEntityRelations = 'article_id';
+type WebTagEntityRelations = 'articles';
 
 /**
  * 文章标签表响应传输对象
@@ -40,5 +40,5 @@ export class WebTagEntityRelationsVO
     description: '关联文章',
     type: () => [WebArticleEntityVO],
   })
-  article_id: WebArticleEntity[];
+  articles: WebArticleEntity[];
 }
