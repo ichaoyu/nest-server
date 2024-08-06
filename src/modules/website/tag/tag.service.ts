@@ -21,7 +21,10 @@ export class TagService {
   async handleFindPage(dto: FindTagPageDTO) {
     const { pageNum, pageSize, keywords } = dto;
     const [list, total] = await this.tagModel.findAndCount({
-      where: [{ name: keywords ? Like(`%${keywords}%`) : null }],
+      where: [
+        { name: keywords ? Like(`%${keywords}%`) : null },
+        { path: keywords ? Like(`%${keywords}%`) : null },
+      ],
       order: {
         updateTime: 'DESC',
       },
