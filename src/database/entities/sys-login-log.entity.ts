@@ -11,7 +11,7 @@ export class SysLoginLogEntity {
    * 主键
    */
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint' })
-  id: number;
+  id: string;
 
   /**
    * 用户账号

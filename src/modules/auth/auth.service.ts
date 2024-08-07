@@ -42,9 +42,7 @@ export class AuthService {
   // #region 登录
   async handleLogin(dto: LoginDTO) {
     const { captchaId, captchaValue, userName, password } = dto;
-
     const passed = await this.captchaService.check(captchaId, captchaValue);
-
     if (!passed && !SysUtil.isTesting) {
       throw new BadRequestException(MESSAGES.CAPTCHA_NOT_CORRECT);
     }
@@ -106,23 +104,16 @@ export class AuthService {
     });
 
     //#region 缓存Token
-
     const isSoloLogin = await this.sharedService.isSoloLogin();
-
     const ttl = this.configService.get<number>('jwt.signOptions.expiresIn');
-
     if (isSoloLogin) {
       const userKey = CacheUtil.getUserKey(userId);
-
       const oldTokenId = await this.cacheManager.get<string>(userKey);
-
       if (oldTokenId) {
         await this.cacheManager.del(CacheUtil.getTokenKey(oldTokenId));
       }
-
       await this.cacheManager.set(userKey, tokenId, ttl);
     }
-
     await this.cacheManager.set(
       CacheUtil.getTokenKey(tokenId),
       {
@@ -135,9 +126,7 @@ export class AuthService {
       },
       ttl,
     );
-
     //#endregion
-
     return this.jwtService.sign({ userName, userId, sub: tokenId });
   }
   // #endregion 登录
@@ -145,22 +134,16 @@ export class AuthService {
   // #region 退出登录
   async handleLogout() {
     const isSoloLogin = await this.sharedService.isSoloLogin();
-
     const payload = this.contextService.getPayload();
-
     // 判断 token 是否已过期
     if (payload) {
       const tokenKey = CacheUtil.getTokenKey(payload.sub);
-
       // 判断是否启用单客户端登录
       if (isSoloLogin) {
         const { userId } = await this.cacheManager.get<IOnlineInfo>(tokenKey);
-
         const userKey = CacheUtil.getUserKey(userId);
-
         await this.cacheManager.del(userKey);
       }
-
       await this.cacheManager.del(tokenKey);
     }
   }

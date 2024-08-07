@@ -27,6 +27,10 @@ export const EXTRAS = {
    */
   ADDR_URL: 'https://searchplugin.csdn.net/api/v1/ip/get',
   /**
+   * 基础鉴权路径
+   */
+  BASIC_AUTH_PATH: '/basic-auth',
+  /**
    * 基础鉴权标识
    */
   BASIC_AUTH_KEY: 'WWW-Authenticate',
