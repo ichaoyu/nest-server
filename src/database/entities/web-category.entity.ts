@@ -44,8 +44,8 @@ export class WebCategoryEntity {
   /**
    * seo描述
    */
-  @Column({ name: 'content' })
-  content: string;
+  @Column({ name: 'seo_description' })
+  seoDescription: string;
 
   /**
    * 栏目名称
