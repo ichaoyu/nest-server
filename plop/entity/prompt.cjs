@@ -2,7 +2,7 @@ const toUpperCase = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 // 下划线转大写字母
 const underline2Upper = (str) => {
   const Str = toUpperCase(str);
-  return str.replace(/_([a-z])/g, (all, i) => {
+  return Str.replace(/_([a-z])/g, (all, i) => {
     return i.toUpperCase();
   });
 };
